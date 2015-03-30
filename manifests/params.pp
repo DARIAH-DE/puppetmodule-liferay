@@ -20,7 +20,7 @@ class liferay::params {
       'dbport'                => '3306',
       'tomcatdriverClassName' => 'com.mysql.jdbc.Driver',
     },
-    'postgres'                => {
+    'postgresql'              => {
       'dbport'                => '5432',
       'tomcatdriverClassName' => 'org.postgresql.Driver',
     }
