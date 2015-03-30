@@ -154,10 +154,10 @@ class liferay::dependencies (
     require => [File['/usr/share/tomcat7/temp/liferay/com/liferay/portal/deploy/dependencies'],Staging::Extract["liferay-portal-src-${version}.zip"]],
   }
 
-  file { '/var/lib/tomcat7/data/osgi/portal/org.apache.felix.scr.jarar':
+  file { '/var/lib/tomcat7/data/osgi/portal/org.apache.felix.scr.jar':
     ensure  => present,
-    owner   => root,
-    group   => root,
+    owner   => 'tomcat7',
+    group   => 'tomcat7',
     mode    => '0644',
     source  => "/opt/staging/liferay-portal-src-${version}/osgi/lib/common/portal/org.apache.felix.scr.jar",
     notify  => Service['tomcat7'],
