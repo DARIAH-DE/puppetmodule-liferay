@@ -1,0 +1,29 @@
+{
+  "name": "dariah-liferay",
+  "version": "0.0.1",
+  "author": "DARIAH-DE",
+  "summary": "Install Liferay with tomcat.",
+  "license": "Apache 2.0",
+  "source": "git@git.projects.gwdg.de:dariah-puppetmodule-liferay.git",
+  "project_page": "https://projects.gwdg.de/projects/dariah-puppetmodule-liferay",
+  "issues_url": "https://projects.gwdg.de/projects/dariah-puppetmodule-liferay",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04"
+      ]
+    }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 3.0.0"},
+    {"name":"nanliu/staging","version_requirement":">= 1.0.0"}
+  ]
+}
+

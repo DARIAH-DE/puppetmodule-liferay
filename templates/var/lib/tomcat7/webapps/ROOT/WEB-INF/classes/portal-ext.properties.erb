@@ -1,0 +1,36 @@
+# MANAGED BY PUPPET
+
+jdbc.default.jndi.name=jdbc/LiferayPool
+liferay.home=/var/lib/tomcat7
+
+### custom settings
+<% @portal_ext_properties_hash.sort.map do |key, value| -%>
+<%= key %>=<%= value %>
+<% end -%>
+
+<% if @hide_user_password_etc %>
+### password etc not editable by user
+
+# Disable password change prompt
+passwords.default.policy.change.required=false
+
+# Disable password reminder prompt
+users.reminder.queries.enabled=false
+users.reminder.queries.custom.question.enabled=false
+
+# screenNames and mail adresses can only be changed by admins
+field.editable.com.liferay.portal.model.User.screenName=administrator
+field.editable.com.liferay.portal.model.User.emailAddress=administrator
+
+# Disable users private and public pages 
+layout.user.private.layouts.auto.create=false
+layout.user.private.layouts.enabled=false
+layout.user.private.layouts.modifiable=false
+layout.user.public.layouts.auto.create=false
+layout.user.public.layouts.enabled=false
+layout.user.public.layouts.modifiable=false
+
+# user should not access their data
+users.form.my.account.main=user-groups,roles,categorization
+<% end %>
+

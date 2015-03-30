@@ -1,0 +1,38 @@
+<Context path="" crossContext="true">
+
+    <Resource
+       name="jdbc/LiferayPool"
+       auth="Container"
+       type="javax.sql.DataSource"
+       driverClassName="<%= scope.lookupvar('::liferay::config::tomcatdriverClassName') %>"
+       url="jdbc:<%= scope.lookupvar('::liferay::config::dbtype') %>://<%= scope.lookupvar('::liferay::dbhost') %>:<%= scope.lookupvar('::liferay::config::dbport') %>/<%= scope.lookupvar('::liferay::dbname') %>?autoReconnect=true"
+       username="<%= scope.lookupvar('::liferay::dbusername') %>"
+       password="<%= scope.lookupvar('::liferay::dbpassword') %>"
+       maxActive="100"
+       maxIdle="30"
+       maxWait="10000"
+    />
+
+    <!-- JAAS -->
+
+    <!--<Realm
+       className="org.apache.catalina.realm.JAASRealm"
+       appName="PortalRealm"
+       userClassNames="com.liferay.portal.kernel.security.jaas.PortalPrincipal"
+       roleClassNames="com.liferay.portal.kernel.security.jaas.PortalRole"
+    />-->
+
+    <!--
+    Uncomment the following to disable persistent sessions across reboots.
+    -->
+
+    <!--<Manager pathname="" />-->
+
+    <!--
+    Uncomment the following to not use sessions. See the property
+    "session.disabled" in portal.properties.
+    -->
+
+    <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
+</Context>
+

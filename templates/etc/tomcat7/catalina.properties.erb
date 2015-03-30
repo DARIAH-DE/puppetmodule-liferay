@@ -1,0 +1,33 @@
+#
+# MANAGED BY PUPPET
+#
+
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+package.access=sun.,org.apache.catalina.,org.apache.coyote.,org.apache.tomcat.,org.apache.jasper.,sun.beans.
+
+package.definition=sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.tomcat.,org.apache.jasper.
+
+common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,/var/lib/tomcat7/common/classes,/var/lib/tomcat6/common/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+
+server.loader=${catalina.home}/server/classes,${catalina.home}/server/*.jar,/var/lib/tomcat7/server/classes,/var/lib/tomcat7/server/*.jar
+
+shared.loader=${catalina.home}/shared/classes,${catalina.home}/shared/*.jar,/var/lib/tomcat7/shared/classes,/var/lib/tomcat7/shared/*.jar
+
+tomcat.util.buf.StringCache.byte.enabled=true
+#tomcat.util.buf.StringCache.char.enabled=true
+#tomcat.util.buf.StringCache.trainThreshold=500000
+#tomcat.util.buf.StringCache.cacheSize=5000
