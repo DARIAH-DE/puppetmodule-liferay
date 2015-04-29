@@ -6,11 +6,13 @@ class liferay::dependencies (
 ) inherits liferay::params {
 
   staging::file { "liferay-portal-src-${version}.zip":
-    source => $::liferay::params::downloadlinks[$version]['src_download_link']
+    source  => $::liferay::params::downloadlinks[$version]['src_download_link'],
+    timeout => 1800,
   }
 
   staging::file { "liferay-portal-dependencies-${version}.zip":
-    source => $::liferay::params::downloadlinks[$version]['dependencies_download_link']
+    source  => $::liferay::params::downloadlinks[$version]['dependencies_download_link']
+    timeout => 1800,
   }
 
   staging::extract { "liferay-portal-src-${version}.zip":
