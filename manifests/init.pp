@@ -42,6 +42,7 @@ class liferay (
     setup_wizard             => $setup_wizard,
     terms_of_use             => $terms_of_use,
     dbtype                   => $dbtype,
+    dbport                   => $dbport,
     custom_config            => $custom_config,
     https                    => $https,
   }

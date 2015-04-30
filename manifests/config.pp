@@ -8,12 +8,12 @@ class liferay::config (
   $setup_wizard            ,
   $terms_of_use            ,
   $dbtype                  ,
+  $dbport                  ,
   $custom_config           ,
   $https                   ,
 ) inherits liferay::params {
 
   $tomcatdriverClassName = $::liferay::params::dbconfig[$dbtype]['tomcatdriverClassName']
-  $dbport =  $::liferay::params::dbconfig[$dbtype]['dbport']
 
   if(is_hash($custom_config)) {
     $custom_config_hash = $custom_config
