@@ -7,7 +7,7 @@ class liferay::install (
 
   # download liferay source
   staging::file { "liferay-portal-${version}.war":
-    source  => $::liferay::params::downloadlinks[$version]['release_download_link']
+    source  => $::liferay::params::downloadlinks[$version]['release_download_link'],
     timeout => 1800,
   }
   ->

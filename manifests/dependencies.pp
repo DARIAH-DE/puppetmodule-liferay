@@ -11,7 +11,7 @@ class liferay::dependencies (
   }
 
   staging::file { "liferay-portal-dependencies-${version}.zip":
-    source  => $::liferay::params::downloadlinks[$version]['dependencies_download_link']
+    source  => $::liferay::params::downloadlinks[$version]['dependencies_download_link'],
     timeout => 1800,
   }
 
