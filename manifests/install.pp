@@ -40,15 +40,6 @@ class liferay::install (
   file { "/var/lib/tomcat7/webapps/ROOT/liferay-${version}.dariah":
     ensure => present,
   }
-  ->
-  # set tomcat environment options
-  file {'/usr/share/tomcat7/bin/setenv.sh':
-    ensure  => present,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0755',
-    content => 'JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=CET -Xmx1024m -XX:MaxPermSize=256m"',
-  }
 
 }
 
