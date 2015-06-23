@@ -9,7 +9,7 @@ class liferay (
   $java_version             = '7',
   $dbhost                   = 'localhost',
   $dbtype                   = 'mysql',
-  $dbport                   = $liferay::params::dbport,
+  $dbport                   = undef,
   $dbname                   = undef,
   $dbusername               = undef,
   $dbpassword               = undef,
@@ -22,6 +22,8 @@ class liferay (
   $terms_of_use             = true,
   $https                    = false,
 ) inherits liferay::params {
+
+  $picked_dbport = pick($dbport,$::liferay::params::dbconfig[$dbtype]['dbport'])
 
   class { 'tomcat7':
     java_version => $java_version,
@@ -42,7 +44,7 @@ class liferay (
     setup_wizard             => $setup_wizard,
     terms_of_use             => $terms_of_use,
     dbtype                   => $dbtype,
-    dbport                   => $dbport,
+    dbport                   => $picked_dbport,
     custom_config            => $custom_config,
     https                    => $https,
   }
