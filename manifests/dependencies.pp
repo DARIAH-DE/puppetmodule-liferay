@@ -239,6 +239,42 @@ class liferay::dependencies (
     group   => 'tomcat7',
     require => Package['tomcat7'],
   }
+  file {'/usr/share/tomcat7/shared':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    require => Package['tomcat7'],
+  }
+  file { '/usr/share/tomcat7/shared/classes':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    require => File['/usr/share/tomcat7/shared'],
+  }
+  file {'/usr/share/tomcat7/common':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    require => Package['tomcat7'],
+  }
+  file { '/usr/share/tomcat7/common/classes':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    require => File['/usr/share/tomcat7/common'],
+  }
+  file {'/usr/share/tomcat7/server':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    require => Package['tomcat7'],
+  }
+  file { '/usr/share/tomcat7/server/classes':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+    require => File['/usr/share/tomcat7/server'],
+  }
 
 
 }

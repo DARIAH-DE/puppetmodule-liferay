@@ -10,12 +10,20 @@ class liferay::install (
     source  => $::liferay::params::downloadlinks[$version]['release_download_link'],
     timeout => 1800,
   }
-  ->
+  ~>
   # make liferay source available
   exec {'chmod_liferay_portal_war':
     path        => ['/usr/local/bin','/usr/bin','/bin'],
     cwd         => '/opt/staging',
     command     => 'chmod -R o+rX liferay',
+    refreshonly => true,
+  }
+  ~>
+  # stop already running tomcat
+  exec {'stop_tomcat7_before_root_removal':
+    path        => ['/usr/local/bin','/usr/bin','/bin'],
+    cwd         => '/var/lib/tomcat7/webapps',
+    command     => '/etc/init.d/tomcat7 stop || true',
     refreshonly => true,
   }
   ->
