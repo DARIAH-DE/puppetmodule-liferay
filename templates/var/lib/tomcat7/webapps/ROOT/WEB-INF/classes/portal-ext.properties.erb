@@ -22,6 +22,11 @@ users.reminder.queries.custom.question.enabled=false
 field.editable.com.liferay.portal.model.User.screenName=administrator
 field.editable.com.liferay.portal.model.User.emailAddress=administrator
 
+# user should not access their data
+users.form.my.account.main=user-groups,roles,categorization
+<% end %>
+
+<% if @disallow_user_pages %>
 # Disable users private and public pages 
 layout.user.private.layouts.auto.create=false
 layout.user.private.layouts.enabled=false
@@ -29,8 +34,5 @@ layout.user.private.layouts.modifiable=false
 layout.user.public.layouts.auto.create=false
 layout.user.public.layouts.enabled=false
 layout.user.public.layouts.modifiable=false
-
-# user should not access their data
-users.form.my.account.main=user-groups,roles,categorization
 <% end %>
 

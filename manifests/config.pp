@@ -5,6 +5,7 @@ class liferay::config (
   $admin_email_from_address,
   $admin_email_from_name   ,
   $hide_user_password_etc  ,
+  $disallow_user_pages     ,
   $setup_wizard            ,
   $terms_of_use            ,
   $dbtype                  ,
