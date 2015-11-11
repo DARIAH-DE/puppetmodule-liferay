@@ -36,20 +36,27 @@ class liferay::tomcat7 (
 
     apt::ppa { 'ppa:webupd8team/java': }
 
-    package { 
+    package {
       'oracle-java8-installer':
         ensure       => present,
         responsefile => '/tmp/java.preseed',
         require      => [Apt::Ppa['ppa:webupd8team/java'],File['/tmp/java.preseed']],
         notify       => Service['tomcat7'],
-      ;
-      'oracle-java8-set-default': ensure => present;
+    }
+    ->
+    package {
+      'oracle-java8-set-default':
+        ensure => present,
+        notify => Service['tomcat7'],
+    }
+    ->
+    package {
       'openjdk-7-jdk':            ensure => absent;
       'openjdk-7-jre':            ensure => absent;
       'openjdk-7-jre-headless':   ensure => absent;
       'openjdk-7-jre-lib':        ensure => absent;
       'openjdk-6-jre-headless':   ensure => absent;
-    }  
+    }
 
   }
 
