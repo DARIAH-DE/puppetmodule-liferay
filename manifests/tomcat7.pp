@@ -60,6 +60,12 @@ class liferay::tomcat7 (
 
   }
 
+  file_line { 'tomcat-java-8':
+    path => '/etc/init.d/tomcat7',
+    line => 'JDK_DIRS="/usr/lib/jvm/default-java ${OPENJDKS} /usr/lib/jvm/java-6-openjdk /usr/lib/jvm/java-6-sun /usr/lib/jvm/java-7-oracle /usr/lib/jvm/java-8-oracle"',
+    match => '^JDK_DIRS=',
+  }
+
   package { 'tomcat7':
     ensure => present
   }
