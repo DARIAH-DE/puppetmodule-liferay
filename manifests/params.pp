@@ -29,10 +29,15 @@ class liferay::params {
       'dependencies_download_link' => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.2%20GA3/liferay-portal-dependencies-6.2-ce-ga3-20150103155803016.zip/download',
       'release_download_link'      => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.2%20GA3/liferay-portal-6.2-ce-ga3-20150103155803016.war/download',
     },
-     '6.2-ce-ga4'                  => {
+    '6.2-ce-ga4'                  => {
       'src_download_link'          => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.3%20GA4/liferay-portal-src-6.2-ce-ga4-20150416163831865.zip/download',
       'dependencies_download_link' => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.3%20GA4/liferay-portal-dependencies-6.2-ce-ga4-20150416163831865.zip/download',
       'release_download_link'      => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.3%20GA4/liferay-portal-6.2-ce-ga4-20150416163831865.war/download',
+    },
+    '6.2-ce-ga5'                  => {
+      'src_download_link'          => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.4%20GA5/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip/download',
+      'dependencies_download_link' => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.4%20GA5/liferay-portal-dependencies-6.2-ce-ga5-20151118111117117.zip/download',
+      'release_download_link'      => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.2.4%20GA5/liferay-portal-6.2-ce-ga5-20151118111117117.war/download',
     }
   }
 
