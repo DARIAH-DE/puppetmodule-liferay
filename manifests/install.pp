@@ -50,8 +50,8 @@ class liferay::install (
   }
   ->
   augeas { 'lifery_session_timeout_5_min':
-    incl     =>  '/files/var/lib/tomcat7/webapps/ROOT/web.xml',
-    context  =>  '/files/var/lib/tomcat7/webapps/ROOT/web.xml/web-app',
+    incl     =>  '/files/var/lib/tomcat7/webapps/ROOT/WEB-INF/web.xml',
+    context  =>  '/files/var/lib/tomcat7/webapps/ROOT/WEB-INF/web.xml/web-app',
     lens     => "Xml.lns",
     changes   => [
       "set session-config/session-timeout/#text 5",
