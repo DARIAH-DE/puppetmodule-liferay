@@ -40,21 +40,21 @@ class liferay::install (
     path    => ['/usr/local/bin','/usr/bin','/bin'],
     user    => 'tomcat7',
     group   => 'tomcat7',
-    command => "unzip -d ROOT /opt/staging/liferay/liferay-portal-${version}.war",
+    command => "unzip -o -d ROOT /opt/staging/liferay/liferay-portal-${version}.war",
     cwd     => '/var/lib/tomcat7/webapps',
     unless  => 'ls /var/lib/tomcat7/webapps/ROOT/WEB-INF/liferay-web.xml',
   }
   ->
   file { "/var/lib/tomcat7/webapps/ROOT/liferay-${version}.dariah":
-    ensure => present,
+    ensure => file,
   }
   ->
   augeas { 'lifery_session_timeout_5_min':
-    incl     =>  '/files/var/lib/tomcat7/webapps/ROOT/WEB-INF/web.xml',
-    context  =>  '/files/var/lib/tomcat7/webapps/ROOT/WEB-INF/web.xml/web-app',
-    lens     => "Xml.lns",
-    changes   => [
-      "set session-config/session-timeout/#text 5",
+    incl    => '/files/var/lib/tomcat7/webapps/ROOT/WEB-INF/web.xml',
+    context => '/files/var/lib/tomcat7/webapps/ROOT/WEB-INF/web.xml/web-app',
+    lens    => 'Xml.lns',
+    changes => [
+      'set session-config/session-timeout/#text 5',
     ],
   }
 
