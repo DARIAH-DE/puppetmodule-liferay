@@ -3,7 +3,7 @@
 class liferay::params {
 
   $downloadlinks = {
-    '6.1-ce-ga2'                  => {
+    '6.1.1-ce-ga2'                  => {
       'src_download_link'          => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.1.1%20GA2/liferay-portal-src-6.1.1-ce-ga2-20120731132656558.zip/download',
       'dependencies_download_link' => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.1.1%20GA2/liferay-portal-dependencies-6.1.1-ce-ga2-20120731132656558.zip/download',
       'release_download_link'      => 'http://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.1.1%20GA2/liferay-portal-6.1.1-ce-ga2-20120731132656558.war/download',
