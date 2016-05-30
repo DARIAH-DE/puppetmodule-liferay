@@ -49,18 +49,10 @@ class liferay::tomcat7 (
         ensure => present,
         notify => Service['tomcat7'],
     }
-    ->
-    package {
-      'openjdk-7-jdk':            ensure => absent;
-      'openjdk-7-jre':            ensure => absent;
-      'openjdk-7-jre-headless':   ensure => absent;
-      'openjdk-7-jre-lib':        ensure => absent;
-      'openjdk-6-jre-headless':   ensure => absent;
-    }
 
     file_line { 'tomcat-java-8':
       path => '/etc/init.d/tomcat7',
-      line => 'JDK_DIRS="/usr/lib/jvm/default-java ${OPENJDKS} /usr/lib/jvm/java-6-openjdk /usr/lib/jvm/java-6-sun /usr/lib/jvm/java-7-oracle /usr/lib/jvm/java-8-oracle"',
+      line => 'JDK_DIRS="/usr/lib/jvm/java-8-oracle /usr/lib/jvm/default-java ${OPENJDKS} /usr/lib/jvm/java-6-openjdk /usr/lib/jvm/java-6-sun /usr/lib/jvm/java-7-oracle "',
       match => '^JDK_DIRS=',
     }
 
