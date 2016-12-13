@@ -26,7 +26,7 @@ class liferay (
 
   $picked_dbport = pick($dbport,$::liferay::params::dbconfig[$dbtype]['dbport'])
 
-  class { 'tomcat7':
+  class { 'liferay::tomcat7':
     java_version => $java_version,
   }
   ~>
