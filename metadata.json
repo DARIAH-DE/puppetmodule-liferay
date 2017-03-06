@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "author": "DARIAH-DE",
   "summary": "Install Liferay with tomcat.",
-  "license": "Apache 2.0",
-  "source": "git@git.projects.gwdg.de:dariah-puppetmodule-liferay.git",
-  "project_page": "https://projects.gwdg.de/projects/dariah-puppetmodule-liferay",
-  "issues_url": "https://projects.gwdg.de/projects/dariah-puppetmodule-liferay",
+  "license": "Apache-2.0",
+  "source": "https://github.com/DARIAH-DE/puppetmodule-liferay.git",
+  "project_page": "https://github.com/DARIAH-DE/puppetmodule-liferay",
+  "issues_url": "https://github.com/DARIAH-DE/puppetmodule-liferay/issues",
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
